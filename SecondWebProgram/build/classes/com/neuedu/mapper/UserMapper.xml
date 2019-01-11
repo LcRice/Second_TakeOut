@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neuedu.mapper.UserMapper">
+	<insert id="insertUser" parameterType="com.neuedu.entity.User" useGeneratedKeys="true" keyProperty="userid">
+		insert into user values(null,#{superadminnumber},#{username},#{usernumber},#{userpassword},#{userphoto},#{usercardnumber},#{usercardpassword},#{useramount},#{useraddress})
+	</insert>
+
+	<select id="findUser" resultType="com.neuedu.entity.User" parameterType="com.neuedu.entity.User">
+		select * from user 
+		<where>
+			<include refid="whereClause"/>
+		</where>
+	</select>
+	
+	<sql id="whereClause">
+		<if test="usernumber!=null">
+			and usernumber = #{usernumber}
+		</if>
+		<if test="userpassword!=null">
+		 	and userpassword = #{userpassword}
+		</if>
+		<if test="userid!=null and userid!=0">
+		 	and userid = #{userid}
+		</if>
+	</sql>
+	
+	<!-- <update id="updateUser" parameterType="">
+		
+	</update> -->
+</mapper>

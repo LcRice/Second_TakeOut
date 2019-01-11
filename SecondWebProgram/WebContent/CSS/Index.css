@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.all a {
+				float: left;
+				width: 310px;
+				height: 696px;
+				transition: 1s;
+				margin-left: 10px;
+			}
+			
+			.all a div{
+				width: 310px;
+				height: 696px;
+			}
+			
+			.index_1 {
+				background-image: url(../image/user.png);
+			}
+			
+			.index_2 {
+				background-image: url(../image/rest.png);
+			}
+			
+			.index_3 {
+				background-image: url(../image/courier.png);
+			}
+			
+			.index_4 {
+				background-image: url(../image/admin.png);
+			}
+			
+			.all a:hover {
+				cursor: pointer;
+				box-shadow: 10px 10px 10px gray;
+			}
